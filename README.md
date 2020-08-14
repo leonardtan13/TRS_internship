@@ -1,6 +1,6 @@
 # Description
 This web application is a proof-of-concept created during an internship. It allows consultants of TRS Forensics to track individual project’s progress, and to store information and documents and messages for each work-item as the project progresses.
-***
+
 
 # Technologies used
 1. Python
@@ -9,7 +9,6 @@ This web application is a proof-of-concept created during an internship. It allo
 4. CSS
 5. Django
 
-***
 
 # Features
 
