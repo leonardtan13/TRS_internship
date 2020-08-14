@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="h1">Project #{{ project.id }}</h1>
+<h5>Customer: {{ project.customer }}</h5>
+<hr>
+<h2>Messages</h2>
+
+    {% if workitem_list|length > 0 %}
+    {% for domain in domain_list %}
+    <h5>{{domain.description}}</h5>
+      {% for key, value in domain_message_dict.items %}
+      <!-- {{key}} : {{value}} -->
+      {% if key.description == domain.description %}
+      <small>Total number of messages: {{value.0}}</small>
+      <br/><small>Last Posted: {{value.1}}</small>
+      <hr>
+      {% endif %}
+      {% endfor %}
+      <ul>
+        {% for i1,i2 in my_list %}
+        <!-- i1 is workitem list, i2 is messagelist -->
+            {% if i1.indomain == domain %}
+            <li>
+                <a href="{% url 'project-workitems' project_id=project.id workitem_id=forloop.counter %}">{{i1.description}}</a> 
+                {% if i2.0 > 0 %}
+                    <br/><small>Number of messages: {{i2.0}}</small>
+                    <br/><small>Last Posted: {{i2.1}}</small>
+                  {% else %}
+                    <br/><small>Number of messages: 0</small>
+                    <br/><small>Last Posted: - </small>
+                {% endif %}
+            </li>
+           {% endif %}
+        {% endfor %}
+      </ul>
+    {% endfor %}
+    {% endif %}
+    
+{% endblock content %}

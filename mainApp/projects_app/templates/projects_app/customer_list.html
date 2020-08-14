@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Customer List</h1>
+    {% if customer_list%}
+    <table class="table table-hover table-sm">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address 1</th>
+            <th scope="col" col-span="2">Address 2</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for customer in customer_list %}
+            <tr>
+                <th scope = "row"> {{forloop.counter}} </th>
+                <td> {{customer.name}} </td>
+                <td> {{customer.address1}} </td>
+                <td> {{customer.address2}} </td>
+                <td><a href=" {% url 'customer-update' customer.id %} "><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>  </td>
+            </tr>        
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    {% else %}
+        <p>There are no customers in the database.</p>
+    {% endif %}  
+
+    <a class="btn btn-outline-dark" href = "{% url 'customer-add' %}" role = "button">Add a new customer</a>
+{% endblock content %}

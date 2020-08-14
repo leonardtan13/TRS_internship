@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load my_filters %}
+
+{% block header %}
+<div class="container pt-3">
+<div class="bs-stepper">
+  <div class="bs-stepper-header">
+    <div class="step {% if project.status == 'PROPOSAL' %}active{% endif %}">
+        <a href=" {% url 'project-status' project.id %} ">
+        <span class="bs-stepper-circle">1</span>
+        <span class="bs-stepper-label">Proposal</span>
+      </a>
+    </div>
+    <div class="line"></div>
+    <div class="step {% if project.status == 'IN_PROGRESS' %}active{% endif %}" >
+      <a href=" {% url 'project-status' project.id %} ">
+        <span class="bs-stepper-circle">2</span>
+        <span class="bs-stepper-label">In progress</span>
+      </a>
+    </div>
+    <div class="line"></div>
+    <div class="step {% if project.status == 'ENDED' %}active{% endif %}" >
+    <a href=" {% url 'project-status' project.id %} ">
+        <span class="bs-stepper-circle">3</span>
+        <span class="bs-stepper-label">Ended</span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock header %}
+
+
+{% block content %}
+<h1 class="h1">Project #{{ project.id }} 
+    {% comment %} <span style="float:right" class="h5" >
+        Status: <a href=" {% url 'project-status' project.id %} ">{{project.get_status_display}}</a>
+    </span> {% endcomment %}
+</h1>
+
+<table class="table table-striped table-sm">
+    <tr>
+        <td><strong>Customer</strong></td>
+        <td>{{ project.customer }}
+            
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Address</strong></td>
+        <td>
+            {{ project.customer.address1 }}
+            <br>{{ project.customer.address2 }}
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Proposal Date</strong></td>
+        <td>{{project.proposaldate}}</td>
+    </tr>
+    <tr>
+        <td><strong>Start Date</strong></td>
+        <td>{{project.startdate}}</td>
+    </tr>
+    <tr>
+        <td><strong>End Date</strong></td>
+        <td>{{project.enddate}}</td>
+    </tr>
+    <tr>
+        <td><strong>Fees</strong></td>
+        <td>{{ project.fees|currency }}</td>
+    </tr>
+    <tr>
+        <td><strong>Fees after grant</strong></td>
+        <td>{{ project.feesaftergrant|currency }}</td>
+    </tr>
+    <tr>
+        <td><strong>Billing 1</strong></td>
+        <td>{{project.billing1}}</td>
+    </tr>
+    <tr>
+        <td><strong>Billing 2</strong></td>
+        <td>{{project.billing2}}</td>
+    </tr>
+    <tr>
+        <td><strong>Billing 3</strong></td>
+        <td>{{project.billing3}}</td>
+    </tr>
+</table>
+<hr>
+
+<h2>Objectives</h2>
+<ul>
+    {% for objective in objective_list %}
+        <li>
+            {{objective}} 
+        </li>
+    {% endfor %}
+</ul>
+<hr>
+
+<h2>Domains and Work Items</h2>
+    <ul>
+    {% for dom in domain_list %}
+        <li>
+            <a href="{% url 'project-domain-table' pk=project.id uk=dom.id %}">
+            <i class="fa fa-table" ></i>
+            </a>
+            {{ dom }}
+        </li>
+          <ul>
+            {% for w in workitem_list %}
+                {% if dom == w.indomain %}
+                    <li>{{ w.description }}</li>
+                {% endif %}
+            {% endfor %}
+          </ul>
+    {% endfor %}
+    </ul>
+<hr>
+
+{% if project.status == 'PROPOSAL' %}
+<a class="btn btn-outline-dark" href = "{% url 'project-edit' project.id %}" role = "button">Edit project details</a>
+<a href=" {% url 'project-update-workitems' project.id %} " class="btn btn-outline-dark mt-2 mb-2">Edit work items</a>
+
+{% if request.user.is_superuser %}
+<a href="{% url 'project-add-user-page' project.id %}" class="btn btn-outline-dark">Access rights</a>
+{% endif %}
+<hr>
+{% endif %}
+
+
+<h2>Downloads</h2>
+<a href=" {% url 'genproposal' project.id%} " class="btn btn-outline-dark" role="button" >Generate proposal document</a>
+<a href=" {% url 'genengagement' project.id%} " class="btn btn-outline-dark" role="button" >Generate engagement document</a>
+
+{% endblock content %}

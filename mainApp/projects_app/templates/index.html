@@ -1,0 +1,19 @@
+{% comment %} unused {% endcomment %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-6">
+        <a href="{% url 'projects' %}" class="btn btn-outline-dark btn-block p-5">View Existing Projects </a>    
+    </div>
+
+    <div class="col-6">
+        <a href="{% url 'project-add' %}" class="btn btn-outline-dark btn-block p-5">Create new Project </a>
+    </div>
+</div>
+
+<br><br>
+
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+<tr><td>Customer name: </td><td> {{customer}}</td></tr>
+<tr><td>Customer address 1: </td><td> {{customer.address1}}</td></tr>
+<tr><td>Customer address 2: </td><td> {{customer.address2}}</td></tr>
+<tr><td>Customer city: </td><td> {{customer.city}}</td></tr>
+</table>
+{% endblock content %}

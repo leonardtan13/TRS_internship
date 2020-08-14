@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load my_filters %}
+{% block content %}
+    <h1>Work Item List</h1>
+    {% if request.user|has_group:"admin" %}
+    <a class="btn btn-outline-dark mt-3 mb-4" href = "{% url 'workitem-add' %}" role = "button">Add a new workitem</a>
+    {% endif %}
+    {% if workitems %}
+    {% for domain in domains %}
+    
+        <h4>{{domain}}</h4>
+        <ul>
+        {% for workitem in workitems %}
+            {% if workitem.indomain == domain %}
+                <li>
+                <a href="{% url 'workitem-update' workitem.id %}" role="button">{{workitem.description}}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    <hr>
+    {% endfor %}
+    {% else %}
+        <p>There are no work items in the database.</p>
+    {% endif %}  
+
+    
+{% endblock content %}

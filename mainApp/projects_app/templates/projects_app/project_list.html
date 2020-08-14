@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+{% load my_filters %}
+
+{% block content %}
+    <h1>Projects</h1>
+    {% if project_list%}
+    <table class="table table-hover table-sm">
+        <thead class="thead-light">
+        <tr>
+            <th>
+                Project
+            </th>
+            <th>
+                Customer
+            </th>
+            <th>
+                Dates
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                <!-- delete -->
+            </th>
+        </tr>
+        </thead>
+        {% for project in project_list %}
+        {% if user in project.users.all or request.user.is_superuser %}
+        <tr>
+            <td class="align-middle">
+                #{{ project.id }}
+            </td>
+            <td class="align-middle">
+                {{ project.customer }}
+                <br>{{ project.customer.address1 }}
+                <br>{{ project.customer.address2 }}
+            </td>
+            <td class="align-middle">
+                Proposal Date: {{project.proposaldate}}<br>
+                Start Date: {{project.startdate}}<br>
+                End Date: {{project.enddate}}<br>           
+            </td>
+
+            <td class="align-middle">
+                <a href=" {% url 'project-status' project.id %} ">{{project.get_status_display}}</a> 
+            </td>
+            <td class="align-middle">
+                <a href="{% url 'project' project.id %}"> <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i> </a>
+                {% if project.status != "PROPOSAL" %}
+                    <a href="{% url 'project-progress' project.id %}"> <i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i> </a>
+                {% endif %}
+                
+                {% if request.user.is_superuser %}
+                    <a href = "{% url 'project-delete' project.id %}"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    
+    </table>
+    {% else %}
+        <p>There are no projects in the database.</p>
+    {% endif %}  
+
+    <!-- <p class="small red">Add button to add new projects</p> -->
+    <a href="{% url 'project-add' %}" class="btn btn-outline-dark">Create new Project </a>
+{% endblock content %}

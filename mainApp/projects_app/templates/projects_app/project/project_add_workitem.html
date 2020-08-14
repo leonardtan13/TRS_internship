@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add work items into Project {{project}} </h2>
+<hr>
+<form method='POST'>{% csrf_token %}
+<input type="hidden" name="project" value={{project.id}}>
+{% for domain in domains %}
+    <div class="form-check">
+        <h4>{{domain}}</h4>
+        {% for workitem in workitems %}
+            {% if workitem.indomain == domain %}
+                {% if workitem in current_workitems %}
+                <input type="checkbox" class="form-check-input" value="1" name= "{{workitem.description}}" checked>
+                {% else %}
+                <input type="checkbox" class="form-check-input" value="1" name= "{{workitem.description}}">
+                {% endif %}
+                {{workitem.description}}
+                <br>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <hr>
+{% endfor %}
+</table>
+<button type="submit" class="btn btn-primary">Save project</button> 
+
+
+
+</form>
+
+{% endblock content %}

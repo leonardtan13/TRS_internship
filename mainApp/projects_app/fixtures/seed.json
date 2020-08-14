@@ -1,0 +1,691 @@
+[
+  {
+    "model": "projects_app.Objective",
+    "fields": {
+      "description": "To assess the adequacy of existing internal controls and determine the effectiveness of internal controls against established guidelines."
+    }
+  },
+
+  {
+    "model": "projects_app.Objective",
+    "fields": {
+      "description": "To provide practical and cost-effective recommendations to rectify internal control findings noted."
+    }
+  },
+
+  {
+    "model": "projects_app.Objective",
+    "fields": {
+      "description": "Tracking the implementation status and timeline of the follow-up actions that have been agreed with management."
+    }
+  },
+
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "General Control Environment and Financial Management"
+    }
+  },
+
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "Sales to Collection"
+    }
+  },
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "Procurement to Payment"
+    }
+  },
+
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "Project Management"
+    }
+  },
+
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "Fixed Asset and Inventory Management"
+    }
+  },
+
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "Bank and Cash Management"
+    }
+  },
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "Human Resources and Payroll"
+    }
+  },
+  {
+    "model": "projects_app.Domain",
+    "fields": {
+      "description": "General IT Controls"
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Organisational structure and reporting line",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Policies and procedures for key operational processes",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Approval matrices", "indomain": 1 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Management of conflict of interest (COI)",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Segregation of duties for key business functions",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Business Continuity Plan (BCP)", "indomain": 1 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Disaster Recovery Plan (DRP)", "indomain": 1 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Risk management process/framework including policy and risk register",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Procedures to ensure compliance with Catalist rules and other relevant regulations",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Review and approval of SGX announcements",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Interested person transactions (IPT)",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Whistle-blowing mechanism", "indomain": 1 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Budgeting and forecasting", "indomain": 1 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Establishment of contract signatories, review and approval of contracts and revision of terms in contracts",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of contracts, licenses, permits and certifications",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monthly and periodic financial reporting process including reconciliation and approval",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Journal entry processing", "indomain": 1 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of compliance with local regulatory requirements and health, safety and environmental regulations",
+      "indomain": 1
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Project tender preparation (including costing and basis of pricing) and approval",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Project contract vetting process and approval",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of contractual obligations",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Credit evaluation and approval, including granting and monitoring of credit limits and terms",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Credit block and release procedures",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Processing of progress billings and invoicing",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Revenue recognition policies and processes",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Credit notes processing, including approval for discount and adjustment",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Accounts receivables and receipts recording",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of accounts receivables",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Provision and/or write-off of doubtful debts",
+      "indomain": 2
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Purchase requisition (including sourcing, evaluation, tendering and awarding of suppliers/subcontractors)",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Processing of purchase orders and project contracts",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of contractual obligations",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Comparison of quotes and tenders",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of receipts and/or outstanding orders/contracts",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Receipts and acceptance of materials",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Purchase returns, claims processing and monitoring",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Progress claims processing and approval",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Supplier and subcontractors assessment, selection and periodic evaluation",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Supplier and subcontractors master files maintenance",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Accounts payable recording", "indomain": 3 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Reconciliation of suppliers and subcontractors' statement of accounts",
+      "indomain": 3
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Payment processing (in accordance with the Company’s approval matrix) and recording",
+      "indomain": 3
+    }
+  },
+
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Project initiation, planning and approval including feasibility studies, risk assessment, resources, costing, schedule, milestones",
+      "indomain": 4
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of project progress, quality and issues",
+      "indomain": 4
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Tracking and rectification of project issues",
+      "indomain": 4
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Accurate and timely accounting for project related transactions",
+      "indomain": 4
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of project milestones and costs, including explanation and approval for overrun of budgeted time and costs",
+      "indomain": 4
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Variation Orders (VOs) management",
+      "indomain": 4
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Retention sum monitoring", "indomain": 4 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Post mortem evaluation", "indomain": 4 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of bankers guarantee or performance bond, if any",
+      "indomain": 4
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Retention of project documents", "indomain": 4 }
+  },
+
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Capital expenditure budget monitoring",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Acquisition of fixed assets, justification and approval",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Receipt and quality check", "indomain": 5 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Movement of fixed assets and inventory including disposal, transfer and removal",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Fixed asset maintenance and repair",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Fixed asset register maintenance",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Capitalisation and depreciation policy",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Fixed asset and inventory verification and reconciliation",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Physical controls and security, including insurance coverage",
+      "indomain": 5
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Impairment and write-off, including justification and approval",
+      "indomain": 5
+    }
+  },
+
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Bank mandates including authorisation matrix and dual signatories",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Banking facilities including financing/borrowing procedures and approval",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Monitoring of bank covenants (if any)",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Bank account opening and closing",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Bank statement review for any unusual transactions",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Cashflow budgeting and forecasting",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Cheque, physical cash and bank tokens custody",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Bank reconciliation", "indomain": 6 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Fixed deposits, investments and fund transfers",
+      "indomain": 6
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Petty cash management", "indomain": 6 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Policies and procedures (including approval matrix)",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Recruitment", "indomain": 7 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Conflict of interest and independence declarations",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Performance appraisal (confirmation and periodic)",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Payroll processing", "indomain": 7 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Staff advances and borrowing (if any)",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Staff claims review (travelling and entertainment)",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Payment of salary", "indomain": 7 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Payroll report review and reconciliation",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Payroll and employee master files management",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Resignation and termination", "indomain": 7 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Staff training management", "indomain": 7 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Compliance with applicable manpower regulations",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Segregation of duties system access rights",
+      "indomain": 7
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Policies and procedures (including approval matrix)",
+      "indomain": 8
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "System change controls", "indomain": 8 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "User access rights controls", "indomain": 8 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Backup and restoration", "indomain": 8 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Firewalls and anti-virus", "indomain": 8 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Password controls", "indomain": 8 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Physical security to server room and computer server",
+      "indomain": 8
+    }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": { "description": "Data security management", "indomain": 8 }
+  },
+  {
+    "model": "projects_app.WorkItem",
+    "fields": {
+      "description": "Segregation of duties and system access rights",
+      "indomain": 8
+    }
+  },
+
+  {
+    "model": "projects_app.Customer",
+    "fields": {
+      "name": "F & F",
+      "address1": "Winery Building",
+      "address2": "22 Geyland Road",
+      "city": "Singapore"
+    }
+  },
+
+  {
+    "model": "projects_app.Customer",
+    "fields": {
+      "name": "G & G",
+      "address1": "YAH Building",
+      "address2": "8 Morey Road",
+      "city": "Singapore"
+    }
+  }
+]

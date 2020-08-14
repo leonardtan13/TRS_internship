@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% comment %} NOT IN USE CURRENTLY {% endcomment %}
+{% block content %}
+<h1 class="h1">Project {{ project.id }}</h1>
+<form method='post'>{% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Save">
+</form>
+{% endblock content %}

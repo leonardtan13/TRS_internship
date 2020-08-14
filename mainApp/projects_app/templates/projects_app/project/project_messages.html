@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="h1">Project #{{ project.id }}</h1>
+<h5>Customer name: {{ project.customer }}</h5>
+<a class="btn btn-outline-dark" href="{% url 'projects' %}">Project list</a>
+<a class="btn btn-outline-dark" href="{% url 'project-progress' project.id %}">Project progress</a><br><br>
+Domain: {{workitem.indomain}}<br>
+Description: {{workitem.description}}<br><br>
+{% if project.status != "ENDED" %}
+<button class="collapsible">Add Message</button><br>
+
+<div class="textArea" id="textArea">
+<form enctype="multipart/form-data" method=POST action="{% url 'project-workitems' project_id=project.id workitem_id=wid %}">{% csrf_token %}    
+
+<textarea class="form-control" id="messageText" name="messageText" placeholder="New message here..." rows="5" cols="50">
+</textarea><br>
+<input type="file" id="document_file" name="document_file"><br><br>
+<input class="btn btn-outline-dark" type="submit" value="Submit">
+
+</form>
+</div>
+{% endif %}
+
+<hr>
+<h1 class="h1">Messages</h1>
+
+{% if message_list %}
+<table class="table table-striped">
+    {% for message in message_list %}
+    <tr>
+        <td>
+        <b>#</b>{{forloop.revcounter}}
+        <br/>
+        <b>Posted:</b> {{message.date_added}}
+        <br/>
+        <b>Posted by:</b> {{message.name}}
+        <br/>
+        {{message.description}}
+        <br/>
+        {% if message.document_file %}
+            <b>Files:</b> <a href="{{message.document_file.url}}" download>{{message.document_file}}</a>
+        {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+    <p>There are no messages for this workitem in the database yet.</p>
+{% endif %}
+
+<script>    
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = document.getElementById("textArea");
+        if (content.style.maxHeight){
+        content.style.maxHeight = null;
+        } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+    }
+</script>
+
+<style>
+    .collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 9px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    }
+
+    .active, .collapsible:hover {
+    background-color: #ccc;
+    }
+
+    .textArea {
+    overflow: hidden;
+    background-color: white;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    }
+</style>
+{% endblock content %}

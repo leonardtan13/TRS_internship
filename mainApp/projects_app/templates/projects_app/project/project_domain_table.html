@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="h1">Project {{ project.id }}'s user table</h1>
+
+<!-- if there are messages show display it -->
+{% if messages %}
+  <br>
+  {% for message in messages %}
+  {% if message.tags == 'error' %}
+  <div class="alert alert-danger" id="message">
+  {% else %}
+  <div class="alert alert-{{ message.tags }}" id="message">
+  {% endif %}
+    {{ message }}
+  </div>
+  {% endfor %}
+{% endif %}
+<br>
+
+{% if columnlist %}
+<form id="form" method="POST" action="{% url 'project-domain-table' pk=project.id uk=uk %}">{% csrf_token %}
+<table id="user-table" class="table table-bordered table-responsive">
+
+  <thead>
+    <tr id="columns">
+    {% for item in columnlist %}
+      <th scope="col">
+        {{item}}
+      </th>
+    {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in rowlists %}
+    <tr>
+        {% for value in row %}
+        <td>
+            <input name="{{forloop.parentloop.counter}},{{forloop.counter0}}" class="input" type="text" value="{{value}}">
+        </td>
+        {% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+
+</table>
+
+<button type="submit" class="btn btn-primary">Save table</button>
+</form>
+{% else %}
+There is currently no user table here. Try adding some columns first.
+{% endif %}
+<hr>
+
+<button class='collapsible btn btn-outline-dark'>Add column</button>
+
+{% if project.status == 'PROPOSAL' %}
+{% else %}
+{% if columnlist %}
+<a href=" {% url 'project-add-row' pk=project.id uk=uk %} " class="btn btn-outline-dark">Add row </a>
+{% endif %}
+{% endif %}
+
+<div class="textArea" id="textArea"><br>
+  <form id="new_column" method="POST" action="{% url 'project-add-column' pk=project.id uk=uk %}">{% csrf_token %}
+    Please specify a name for the new column below<br><br>
+    Column Name: <input name="column_name" type='text'><br><br>
+    
+    <button type="submit" class="btn btn-outline-dark">Confirm</button>
+  </form>
+<hr>
+</div>
+<script>    
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = document.getElementById("textArea");
+      if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      }
+  });
+  }
+
+
+</script>
+
+
+<style>
+
+.input {
+    border:none;
+}
+
+.table-responsive{
+  display: inline-table;
+}
+
+.textArea {
+  overflow: hidden;
+  background-color: white;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+</style>
+
+{% endblock content %}
